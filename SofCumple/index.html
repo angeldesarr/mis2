@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¡Cumpleaños Sofi! | 2 Años</title>
+
+    <!-- Estilos -->
+    <link rel="stylesheet" href="css/styles.css">
+
+    <!-- Iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Fuentes -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Control de música -->
+    <div class="music-control">
+        <button id="music-toggle" aria-label="Activar o desactivar música">
+            <i class="fas fa-music"></i>
+            <span id="music-status">Música: ON</span>
+        </button>
+        <audio id="background-music" loop>
+            <source src="minnie.mp3" type="audio/mpeg">
+            Tu navegador no soporta audio.
+        </audio>
+    </div>
+
+    <!-- Imágenes flotantes Minnie -->
+    <div class="minnie-images-container"></div>
+
+    <main>
+
+        <!-- ================= HEADER ================= -->
+        <section class="parallax-section" id="header-section">
+            <div class="overlay">
+
+                <header class="header">
+                    <div class="minnie-bow">
+                        <img src="svg/descarga.svg" alt="Moño de Minnie" class="minnie-bow-img">
+                    </div>
+
+
+                    <h1 class="disney-font">¡Estás Invitado!</h1>
+
+                    <div class="birthday-girl">
+                        <h2>A la fiesta de cumpleaños de</h2>
+                        <span class="sofia-name">Sofi</span>
+                        <h1 class="age-text">2 años</h1>
+                    </div>
+
+                    <!-- Reloj Minnie -->
+                    <div class="minnie-clock-placeholder">
+                        <div class="clock-container">
+                            <div class="minnie-clock">
+                                <div class="minnie-bow-clock left"></div>
+                                <div class="minnie-bow-clock right"></div>
+                                <div class="minnie-clock-face">
+                                    <div class="clock-time">4:00 PM</div>
+                                    <div class="clock-date">7 de Febrero</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </header>
+
+                <!-- Contador -->
+                <div class="countdown-container">
+                    <h3 class="countdown-title disney-font">La Fiesta Comienza En:</h3>
+                    <div class="countdown" id="countdown">
+                        <div class="countdown-item">
+                            <span class="countdown-number" id="days">0</span>
+                            <span class="countdown-label">Días</span>
+                        </div>
+                        <div class="countdown-item">
+                            <span class="countdown-number" id="hours">00</span>
+                            <span class="countdown-label">Horas</span>
+                        </div>
+                        <div class="countdown-item">
+                            <span class="countdown-number" id="minutes">00</span>
+                            <span class="countdown-label">Minutos</span>
+                        </div>
+                        <div class="countdown-item">
+                            <span class="countdown-number" id="seconds">00</span>
+                            <span class="countdown-label">Segundos</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ================= INFO ================= -->
+        <section class="parallax-section" id="info-section">
+            <div class="overlay">
+                <div class="event-info">
+                    <h3 class="disney-font section-title">Detalles del Evento</h3>
+                    <p class="section-subtitle">Mis dos años</p>
+
+                    <div class="info-grid">
+                        <div class="info-item">
+                            <i class="fas fa-calendar-alt"></i>
+                            <div class="info-content">
+                                <h4>Fecha</h4>
+                                <p>7 de Febrero de 2024</p>
+                            </div>
+                        </div>
+
+                        <div class="info-item">
+                            <i class="fas fa-clock"></i>
+                            <div class="info-content">
+                                <h4>Hora</h4>
+                                <p>4:00 PM</p>
+                            </div>
+                        </div>
+
+                        <div class="info-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div class="info-content">
+                                <h4>Lugar</h4>
+                                <p>Av. Madrid 116, Sanctorum, Pue.</p>
+                            </div>
+                        </div>
+
+                        <div class="info-item">
+                            <i class="fas fa-gift"></i>
+                            <div class="info-content">
+                                <h4>Regalos</h4>
+                                <p>Tu presencia es el mejor regalo</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="dress-code">
+                        <h4><i class="fas fa-tshirt"></i> Código de Vestimenta</h4>
+                        <p>Colores rosa, rojo o puntos como Minnie</p>
+                    </div>
+
+                    <div class="action-buttons">
+                        <button class="btn btn-map" id="map-btn" type="button">
+                            <i class="fas fa-map"></i> Ver Ubicación
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+        <!-- ================= MODAL MAPA ================= -->
+        <div class="modal" id="map-modal">
+            <div class="modal-content">
+                <span class="close-modal">&times;</span>
+                <h3 class="disney-font">Ubicación del Lugar</h3>
+
+                <div class="map-placeholder">
+                    <i class="fas fa-map-marked-alt"></i>
+                    <p>Av. Madrid 116, Sanctorum, Pue.</p>
+                </div>
+
+                <a href="https://www.google.com/maps?q=Av.+Madrid+116,+Sanctorum,+Pue."
+                   target="_blank"
+                   class="btn btn-map">
+                    <i class="fas fa-external-link-alt"></i> Abrir en Maps
+                </a>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- ================= FOOTER ================= -->
+    <footer class="footer">
+        <div class="footer-hearts">
+            <i class="fas fa-heart"></i>
+            <i class="fas fa-heart"></i>
+            <i class="fas fa-heart"></i>
+        </div>
+        <p>¡Te esperamos para celebrar a Sofi!</p>
+        <p>Con amor, su familia</p>
+    </footer>
+
+    <!-- ================= SCRIPTS ================= -->
+    <!-- SOLO ESTE SCRIPT, ELIMINA LA LÍNEA DE firebase-config.js -->
+    <script type="module" src="js/script.js"></script>
+
+</body>
+</html>
